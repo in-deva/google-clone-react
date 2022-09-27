@@ -3,15 +3,22 @@ import React from 'react'
 
 // create component
 class App extends React.Component{
-	state = {}
+	state = {
+		input: ''
+	}
+	changeInput(typed) {
+		this.setState ({
+			input: typed.target.value
+		})
+	}
 	render() {
 		return (
-			<div class="wrap">
-				<img class="logo" src="/google.png" alt="" />
+			<div className="wrap">
+				<img className="logo" src="/google.png" alt="" />
 				<form>
-					<input type="text" />
+					<input type="text" onKeyUp={e => this.changeInput(e)} autoFocus />
 					<div>
-						<button class="primary">Search</button>
+						<button className="primary">Search</button>
 					</div>
 				</form>
 			</div>
