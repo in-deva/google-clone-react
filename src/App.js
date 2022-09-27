@@ -1,5 +1,5 @@
 // import react
-import React from 'react'
+import React from "react";
 
 // create component
 class App extends React.Component{
@@ -27,4 +27,4 @@ class App extends React.Component{
 }
 
 // export react
-export default App
+export default App;
