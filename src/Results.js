@@ -38,7 +38,7 @@ class Results extends React.Component{
 		      </form>
 		    </div>
 		    <div className="small">
-		      <small>37 Results</small>
+		      <small>{this.state.results.length} Result{this.state.results.length !== 1 ? 's' : ''}</small>
 		    </div>
 				{/* results area */}
 				{this.state.results.map((result, i) =>
