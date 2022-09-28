@@ -32,6 +32,19 @@ class Results extends React.Component{
 			<div>
 		    <div className="header">
 		      <img className="logo" src="google.png" />
+					{/* search form */}
+					{/* to do
+	PART 1
+link form through onSubmit to call a method
+overrideDefault (something like that)
+use the form to change states
+Test it all works
+	PART 2
+make form input value update the state onKeyUp
+make form submit reset input value
+	BONUS
+make input value and state linked/looped and working
+					*/}
 		      <form>
 		        <input type="text" onKeyUp={e => this.changeInput(e)} autoFocus />
 		        <button className="primary">Search</button>
@@ -40,7 +53,14 @@ class Results extends React.Component{
 		    <div className="small">
 		      <small>{this.state.results.length} Result{this.state.results.length !== 1 ? 's' : ''}</small>
 		    </div>
-				{/* results area */}
+				{/* results */}
+				{/* to do
+make this a controller called Result.js
+	cut-paste block
+import it into this file
+pass relevant data to the child Result.js
+	make it work using this.prod
+				*/}
 				{this.state.results.map((result, i) =>
 					<section>
 		      <span>{result.url}</span>
