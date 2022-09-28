@@ -1,26 +1,39 @@
 // import react
 import React from "react";
+import Search from "./Search"
+import Results from "./Results"
 
 // create component
 class App extends React.Component{
 	state = {
-		input: ''
+		input: '',
+		results: [{
+			title: 'fuuuuuuu',
+			description: 'Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java',
+			url: 'www.W3Schools.com',
+			links: [
+				{
+				title: 'JavaScript Introduction',
+				url: '#'
+			}, {
+				title: 'JavaScript Functions',
+				url: '#'
+			}, {
+				title: 'JavaScript Examples',
+				url: '#'
+			}]}
+		]
 	}
 	changeInput(typed) {
-		this.setState ({
-			input: typed.target.value
-		})
+		console.log(typed.target.value)
+		// this.setState ({
+		// 	input: typed.target.value
+		// })
 	}
 	render() {
 		return (
-			<div className="wrap">
-				<img className="logo" src="/google.png" alt="" />
-				<form>
-					<input type="text" onKeyUp={e => this.changeInput(e)} autoFocus />
-					<div>
-						<button className="primary">Search</button>
-					</div>
-				</form>
+			<div>
+				<Results results={this.state.results} changeInput={this.changeInput}/>
 			</div>
 		)
 	}
