@@ -8,7 +8,7 @@ class Search extends React.Component{
 			<div className="wrap">
 				<img className="logo" src="/google.png" alt="" />
 				<form>
-					<input type="text" onKeyUp={e => this.changeInput(e)} autoFocus />
+					<input type="text" onKeyUp={e => this.props.changeInput(e)} autoFocus />
 					<div>
 						<button className="primary">Search</button>
 					</div>

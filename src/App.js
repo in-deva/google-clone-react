@@ -37,7 +37,7 @@ class App extends React.Component{
 	render() {
 		return (
 			<div>
-				{this.state.results.length ? <Results results={this.state.results} changeInput={this.changeInput}/> : <Search />}
+				{this.state.results.length ? <Results results={this.state.results} changeInput={this.changeInput}/> : <Search  changeInput={this.changeInput} />}
 			</div>
 		)
 	}
