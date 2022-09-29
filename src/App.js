@@ -29,22 +29,20 @@ class App extends React.Component{
 			input: typed.target.value
 		})
 	}
-	// getResults = () => {
-	// 	this.setState ({
-	// 		results: true
-	// 	})
-	//}
-	filterResults = (this.state.input) => {
-		// code to return it from db
-		// let results = //return from db
-		this.setState({
-
-		})
+	getResults = (e) => {
+		e.preventDefault()
+		console.log(this.state.input)
 	}
 	render() {
 		return (
 			<div>
-				{this.state.results.length ? <Results results={this.state.results} changeInput={this.changeInput}/> : <Search  changeInput={this.changeInput} />}
+				{this.state.results.length ?
+					<Results
+					results={this.state.results} changeInput={this.changeInput}
+					getResults={this.getResults}/> :
+					<Search
+					changeInput={this.changeInput}
+					getResults={this.getResults} />}
 			</div>
 		)
 	}

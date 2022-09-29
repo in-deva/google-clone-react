@@ -11,7 +11,7 @@ class Results extends React.Component{
 		      <img className="logo" src="google.png" />
 					{/* search form */}
 					{/* FORM ACTIONS NEED UPDATING */}
-		      <form>
+		      <form onSubmit={e => this.props.getResults(e)}>
 		        <input type="text" onKeyUp={e => this.props.changeInput(e)} autoFocus />
 		        <button className="primary">Search</button>
 		      </form>
