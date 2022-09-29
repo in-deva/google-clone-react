@@ -1,15 +1,12 @@
 // import react
-import React from "react";
+import React from "react"
 
 // create component
 class Result extends React.Component{
-	state = {
-		results: this.props.results
-	}
 	render() {
 		return (
 			<div>
-				{this.state.results.map((result, i) =>
+				{this.props.results.map((result, i) =>
 					<section>
 						<span>{result.url}</span>
 						<h2><a href={result.url}>{result.title}</a></h2>
