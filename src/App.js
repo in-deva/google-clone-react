@@ -29,9 +29,16 @@ class App extends React.Component{
 			input: typed.target.value
 		})
 	}
-	getResults = () => {
-		this.setState ({
-			results: true
+	// getResults = () => {
+	// 	this.setState ({
+	// 		results: true
+	// 	})
+	//}
+	filterResults = (this.state.input) => {
+		// code to return it from db
+		// let results = //return from db
+		this.setState({
+
 		})
 	}
 	render() {

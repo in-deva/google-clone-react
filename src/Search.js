@@ -7,7 +7,7 @@ class Search extends React.Component{
 		return (
 			<div className="wrap">
 				<img className="logo" src="/google.png" alt="" />
-				<form>
+				<form onSubmit=(this.props.filterResults)>
 					<input type="text" onKeyUp={e => this.changeInput(e)} autoFocus />
 					<div>
 						<button className="primary">Search</button>
