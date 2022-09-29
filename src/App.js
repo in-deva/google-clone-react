@@ -30,12 +30,11 @@ class App extends React.Component{
 			input: typed.target.value
 		})
 	}
-	getResults = (e) => {
+	getResults = async (e) => {
 		e.preventDefault()
-
-    // results = await axios.get('http://localhost:3000/results')
-
-		console.log(this.state.results)
+		// !!! update this to get the port automatically
+  	let results = await axios.get('http://localhost:3001/results?search=java')
+		console.log(results)
 	}
 	render() {
 		return (
