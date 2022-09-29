@@ -7,7 +7,7 @@ class Result extends React.Component{
 		return (
 			<div>
 				{this.props.results.map((result, i) =>
-					<section>
+					<section key={i}>
 						<span>{result.url}</span>
 						<h2><a href={result.url}>{result.title}</a></h2>
 						<p>{result.description}</p>
