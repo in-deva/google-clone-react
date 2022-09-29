@@ -2,6 +2,7 @@
 import React from "react"
 import Search from "./Search"
 import Results from "./Results"
+import axios from 'axios'
 
 // create component
 class App extends React.Component{
@@ -31,7 +32,10 @@ class App extends React.Component{
 	}
 	getResults = (e) => {
 		e.preventDefault()
-		console.log(this.state.input)
+
+    // results = await axios.get('http://localhost:3000/results')
+
+		console.log(this.state.results)
 	}
 	render() {
 		return (
