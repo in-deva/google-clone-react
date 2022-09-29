@@ -24,11 +24,12 @@ class App extends React.Component{
 			}]}
 		]
 	}
-	changeInput(typed) {
-		console.log(typed.target.value)
-		// this.setState ({
-		// 	input: typed.target.value
-		// })
+	changeInput = (typed) => {
+		// console.log(typed.target.value)
+		this.setState ({
+			input: typed.target.value
+		})
+		console.log(this.state.input);
 	}
 	render() {
 		return (
