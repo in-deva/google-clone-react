@@ -1,8 +1,10 @@
 // import react
 import React from "react";
+import Result from "./Result"
 
 // create component
 class Results extends React.Component{
+	// don't need this?
 	state = {
 		results: this.props.results
 	}
@@ -21,7 +23,7 @@ class Results extends React.Component{
 		      <small>{this.state.results.length} Result{this.state.results.length !== 1 ? 's' : ''}</small>
 		    </div>
 				{/* results */}
-				<Result />
+				<Result results={this.state.results} />
 			</div>
 		)
 	}
