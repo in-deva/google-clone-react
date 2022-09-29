@@ -25,16 +25,19 @@ class App extends React.Component{
 		]
 	}
 	changeInput = (typed) => {
-		// console.log(typed.target.value)
 		this.setState ({
 			input: typed.target.value
 		})
-		console.log(this.state.input);
+	}
+	getResults = () => {
+		this.setState ({
+			results: true
+		})
 	}
 	render() {
 		return (
 			<div>
-				<Results results={this.state.results} changeInput={this.changeInput}/>
+				{this.state.results.length ? <Results results={this.state.results} changeInput={this.changeInput}/> : <Search />}
 			</div>
 		)
 	}

@@ -21,7 +21,7 @@ class Results extends React.Component{
 		      <small>{this.state.results.length} Result{this.state.results.length !== 1 ? 's' : ''}</small>
 		    </div>
 				{/* results */}
-				<Result />
+				
 			</div>
 		)
 	}
