@@ -32,8 +32,8 @@ class App extends React.Component{
 	}
 	getResults = async (e) => {
 		e.preventDefault()
-		// !!! update this to get the port automatically
-  	let results = await axios.get('http://localhost:3001/results?search=java')
+		// !!! build whole thing with template literal
+  	let results = await axios.get(process.env.REACT_APP_SERVER_URL + '/results?search=java')
 		console.log(results)
 	}
 	render() {
