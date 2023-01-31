@@ -5,7 +5,7 @@ class Result extends React.Component{
 		return (
 			<div>
 				{this.props.results.map((result, i) =>
-					<section key={i}>
+					<section className='result' key={i}>
 						<span>{result.url}</span>
 						<h2><a href={result.url} target="_blank">{result.title}</a></h2>
 						<p>{result.description}</p>

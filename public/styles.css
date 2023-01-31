@@ -1,10 +1,46 @@
-/* css */
+/*! general */
 html {
   color: #5b5b5b;
   font-family: Helvetica, Sans-serif;
   font-size: 14px;
+  height: 100vh;
+  margin: 1rem;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+a {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #660099;
+}
+
+ul {
+  list-style: none;
+  font-size: 12px;
+}
+
+#logo {
+  width: 150px;
+}
+
+/** search */
+#search {
+  text-align: center;
+}
+
+#search input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/** search form (both pages) */
 input {
   border: #c4c4c4 1px solid;
   border-radius: 25px;
@@ -25,99 +61,52 @@ button {
   width: 80px;
 }
 
-section {
-  border-bottom: 40px;
-  margin-bottom: 40px;
-  width: 700px;
-}
-
-section,
-small {
-  margin-left: 180px;
-}
-
 button:hover {
   color: #5998ff;
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: normal;
-  margin-top: 2px;
-  margin-bottom: 0;
-}
+/** results */
 
-a {
-  color: #1a0dab;
-}
+  /** header */
 
-h2 a {
-  text-decoration: none;
-}
+#results #header {
+  display: grid;
+  grid-template-columns: 160px auto;
+} */
 
-a:visited {
-  color: #660099;
-}
-
-ul {
-  font-size: 12px;
-  list-style: none;
-  padding: 5px;
-}
-
-p {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-li {
-  display: inline;
-  margin-right: 15px;
-}
-
-div.wrap {
-  text-align: center;
-}
-
-div.header {
+#results #header {
   border-bottom: 1px solid #c4c4c4;
 }
 
-.small {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.logo {
-  width: 150px;
-}
-
-div.header img.logo {
+#results #header img#logo {
   width: 100px;
   margin: 5px 30px 10px 10px;
 }
 
-table {
-  border: 1px;
-}
-.wrap .logo {
-  margin-top: 100px;
+#results button {
+  margin-left: 20px;
 }
 
-.wrap [type="text"] {
+  /** body */
+
+#results #body {
+  margin-left: 190px;
+}
+
+/** result */
+
+#result-count {
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 
-.wrap .primary {
-  margin-top: 20px;
+.result ul {
+  margin-block-start: 0px;
+  padding-inline-start: 0px;
 }
-
-.primary {
-  width: 80px;
-  text-align: center;
+.result li {
+  display: inline;
 }
-
-.header {
-  display: grid;
-  grid-template-columns: 180px auto;
+.result li + li {
+  margin-left: 15px;
 }
