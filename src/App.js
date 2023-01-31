@@ -1,7 +1,8 @@
 // import react
 import React from "react"
-import Search from "./Search"
-import Results from "./Results"
+
+import Search from "./search"
+import Results from "./results"
 
 import content from './assets/content.json'
 

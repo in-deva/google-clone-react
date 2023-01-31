@@ -1,6 +1,6 @@
 // import react
 import React from "react"
-import Result from "./Result"
+import Result from "./result"
 
 class Results extends React.Component{
 	render() {
