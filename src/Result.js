@@ -1,7 +1,5 @@
-// import react
 import React from "react"
 
-// create component
 class Result extends React.Component{
 	render() {
 		return (
@@ -9,11 +7,12 @@ class Result extends React.Component{
 				{this.props.results.map((result, i) =>
 					<section key={i}>
 						<span>{result.url}</span>
-						<h2><a href={result.url}>{result.title}</a></h2>
+						<h2><a href={result.url} target="_blank">{result.title}</a></h2>
 						<p>{result.description}</p>
 						<ul>
 							{result.links.map((link, i) =>
-							<li key={i}><a href={link.url}>{link.title}</a></li>)}
+								<li key={i}><a href={link.url}>{link.title}</a></li>
+							)}
 						</ul>
 					</section>
 				)}
@@ -22,5 +21,4 @@ class Result extends React.Component{
 	}
 }
 
-// export react
 export default Result

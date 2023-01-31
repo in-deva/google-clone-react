@@ -2,29 +2,29 @@
 import React from "react"
 import Search from "./Search"
 import Results from "./Results"
-import axios from 'axios'
 
-import Content from './assets/content.json'
+import content from './assets/content.json'
 
-// create component
 class App extends React.Component{
 	state = {
 		input: '',
-		active: 'search'
+		active: 'search',
+		results: '',
 	}
 
 	changeInput = (typed) => {
-		this.setState ({
-			input: typed.target.value
-		})
+		this.setState ({ input: typed.target.value.toLowerCase() })
 	}
 
 	getResults = async (e) => {
-		console.log('here');
-		e.preventDefault()
-		this.setState ({
-			active: 'results'
-		})
+		e.preventDefault() // prevents form being submitted (reloads page)
+		if (this.state.active == 'search') { this.setState ({ active: 'results' }) } // unmounts search component, mounts results component
+		// filtering content
+			// title includes input
+		let filteredContent = content.filter(item => item.title.toLowerCase().includes(this.state.input))
+		this.setState ({ results: filteredContent })
+			// TODO - links title includes
+			// TODO - description includes
 	}
 
 	render() {
@@ -39,13 +39,12 @@ class App extends React.Component{
 					<Results
 						changeInput={this.changeInput}
 						getResults={this.getResults}
+						results={this.state.results}
 					/> 
 				}
-	
 			</div>
 		)
 	}
 }
 
-// export react
 export default App
