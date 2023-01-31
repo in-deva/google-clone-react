@@ -17,10 +17,10 @@ class Results extends React.Component{
 		      </form>
 		    </div>
 		    <div className="small">
-		      <small>{this.props.results.length} Result{this.props.results.length !== 1 ? 's' : ''}</small>
+		      {/* <small>{this.props.results.length} Result{this.props.results.length !== 1 ? 's' : ''}</small> */}
 		    </div>
 				{/* results */}
-				<Result results={this.props.results} />
+				{/* <Result results={this.props.results} /> */}
 			</div>
 		)
 	}

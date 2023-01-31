@@ -4,48 +4,44 @@ import Search from "./Search"
 import Results from "./Results"
 import axios from 'axios'
 
+import Content from './assets/content.json'
+
 // create component
 class App extends React.Component{
 	state = {
 		input: '',
-		results: [{
-			title: 'fuuuuuuu',
-			description: 'Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap, Java',
-			url: 'www.W3Schools.com',
-			links: [
-				{
-				title: 'JavaScript Introduction',
-				url: '#'
-			}, {
-				title: 'JavaScript Functions',
-				url: '#'
-			}, {
-				title: 'JavaScript Examples',
-				url: '#'
-			}]}
-		]
+		active: 'search'
 	}
+
 	changeInput = (typed) => {
 		this.setState ({
 			input: typed.target.value
 		})
 	}
+
 	getResults = async (e) => {
+		console.log('here');
 		e.preventDefault()
-		// !!! build whole thing with template literal
-  	let results = await axios.get(process.env.REACT_APP_SERVER_URL + '/results?search=java')
-		console.log(results)
+		this.setState ({
+			active: 'results'
+		})
 	}
+
 	render() {
 		return (
 			<div>
-				{this.state.results.length ?
-					<Results
-					results={this.state.results} changeInput={this.changeInput}
-					getResults={this.getResults}/> :
+				{this.state.active == 'search' ?
 					<Search
-					changeInput={this.changeInput}
-					getResults={this.getResults} />}
+						changeInput={this.changeInput}
+						getResults={this.getResults} 
+					/> 
+					:
+					<Results
+						changeInput={this.changeInput}
+						getResults={this.getResults}
+					/> 
+				}
+	
 			</div>
 		)
 	}
