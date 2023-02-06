@@ -4,6 +4,8 @@ class Result extends React.Component{
 	render() {
 		return (
 			<div>
+							
+			
 				{this.props.results.map((result, i) =>
 					<section className='result' key={i}>
 						<span>{result.url}</span>
@@ -16,6 +18,8 @@ class Result extends React.Component{
 						</ul>
 					</section>
 				)}
+
+
 			</div>
 		)
 	}
